@@ -53,7 +53,8 @@ jobs:
         run: cargo tauri build
         env:
           TAURI_SIGNING_PRIVATE_KEY: ""
-          LINUXDEPLOY_BUNDLE_ALL_LIBS: "1"
+          APPIMAGE_EXTRACT_AND_RUN: 1
+          EXTRA_LIB_EXCLUDES: "libEGL.so.1;libGLESv2.so.2;libgbm.so.1;libdrm.so.2;libglapi.so.0;libEGL_mesa.so.0"
 
       - name: Upload Linux artifacts
         if: runner.os == 'Linux'
