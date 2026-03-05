@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LOTRO Plugin Companion</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <div class="sticky-top">
+      <header>
+        <h1>LOTRO Plugin Companion</h1>
+        <p class="subtitle">Browse available plugins from LotroInterface</p>
+      </header>
+
+      <div class="controls">
+        <div class="search-box">
+          <input type="text" id="search" placeholder="Search plugins by name, author, or description..." />
+        </div>
+        <div class="filter-row">
+          <select id="category-filter">
+            <option value="">All Categories</option>
+          </select>
+          <select id="sort-by">
+            <option value="installed">Installed First</option>
+            <option value="updated">Recently Updated</option>
+            <option value="downloads">Most Downloaded</option>
+            <option value="name">Name (A-Z)</option>
+            <option value="author">Author (A-Z)</option>
+          </select>
+          <span id="plugin-count" class="count-badge"></span>
+          <button id="refresh-btn" class="btn-refresh" title="Refresh plugin list">Refresh</button>
+          <button id="settings-btn" class="btn-settings" title="Settings">Settings</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Fetching plugins from LotroInterface...</p>
+    </div>
+
+    <div id="error" class="error" style="display:none;"></div>
+
+    <div id="plugin-list" class="plugin-list"></div>
+  </div>
+
+  <!-- Detail modal -->
+  <div id="detail-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Settings modal -->
+  <div id="settings-modal" class="modal" style="display:none;">
+    <div class="modal-content settings-modal-content">
+      <button class="modal-close" id="settings-close">&times;</button>
+      <div class="settings-title">Settings</div>
+      <div class="settings-section">
+        <label class="settings-label">Plugin Download Directory</label>
+        <p class="settings-hint">Choose where plugins should be downloaded and extracted to.</p>
+        <div class="settings-dir-row">
+          <input type="text" id="plugin-dir-display" class="settings-dir-input" readonly placeholder="No directory selected..." />
+          <button id="browse-dir-btn" class="btn-browse">Browse</button>
+        </div>
+        <div id="settings-status" class="settings-status" style="display:none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
