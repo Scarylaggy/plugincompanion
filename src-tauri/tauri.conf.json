@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/nickolasgalante/tauri-schema/refs/heads/stable/tauri.conf.json",
   "productName": "LOTRO Plugin Companion",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "identifier": "com.lotro.plugincompanion",
   "build": {
     "frontendDist": "../ui"

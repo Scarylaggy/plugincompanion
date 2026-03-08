@@ -55,7 +55,7 @@ jobs:
           APPIMAGE_EXTRACT_AND_RUN: 1
           NO_STRIP: 1
           # Critical for AMD/Arch compatibility
-          EXTRA_LIB_EXCLUDES: "libEGL.so.1;libGLESv2.so.2;libgbm.so.1;libdrm.so.2;libglapi.so.0;libEGL_mesa.so.0"
+          EXTRA_LIB_EXCLUDES: "libEGL.so.1;libEGL.so;libGLESv2.so.2;libGLESv2.so;libgbm.so.1;libgbm.so;libdrm.so.2;libdrm.so;libglapi.so.0;libglapi.so;libEGL_mesa.so.0;libGLX_mesa.so.0"
         with:
           tagName: ${{ github.ref_name }}
           releaseName: "LOTRO Plugin Companion v__VERSION__"
