@@ -42,7 +42,18 @@ jobs:
             libayatana-appindicator3-dev \
             librsvg2-dev \
             libssl-dev \
-            libegl1
+            libegl1 \
+            libglib2.0-dev \
+            libpango1.0-dev \
+            libatk1.0-dev \
+            libatk-bridge2.0-dev \
+            libxcomposite-dev \
+            libxdamage-dev \
+            libxfixes-dev \
+            libxrandr-dev \
+            libxkbcommon-dev \
+            libgbm-dev \
+            libasound2-dev
         env:
           DEBIAN_FRONTEND: noninteractive
 
@@ -55,7 +66,7 @@ jobs:
           APPIMAGE_EXTRACT_AND_RUN: 1
           NO_STRIP: 1
           # Critical for AMD/Arch compatibility
-          EXTRA_LIB_EXCLUDES: "libEGL.so.1;libEGL.so;libGLESv2.so.2;libGLESv2.so;libgbm.so.1;libgbm.so;libdrm.so.2;libdrm.so;libglapi.so.0;libglapi.so;libEGL_mesa.so.0;libGLX_mesa.so.0"
+          EXTRA_LIB_EXCLUDES: "libEGL*;libGLES*;libgbm*;libdrm*;libglapi*;libGLX*;libglx*;libGLdispatch*;libGLX_mesa*"
         with:
           tagName: ${{ github.ref_name }}
           releaseName: "LOTRO Plugin Companion v__VERSION__"
